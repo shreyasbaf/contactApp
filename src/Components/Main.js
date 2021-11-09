@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import axios from 'axios';
 import ItemCard from './ItemCard';
 import CircularProgress from '@mui/material/CircularProgress';
+import { Stack } from '@mui/material';
 
 export default function Main(props) {
     const [loading,setLoading] = React.useState(false)
@@ -47,7 +48,9 @@ function onHandleLike(value){
         <h2 style={{justifyContent:'center',justifyItems:'center',textAlign:'center'}}>Contact App</h2>
         {
             loading ? 
-            <CircularProgress style={{justifyContent:'center', alignItems:'center',justifyItems:'center',textAlign:'center'}}/>
+            <Stack alignItems="center">
+            <CircularProgress/>
+            </Stack>
             :    
             <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
