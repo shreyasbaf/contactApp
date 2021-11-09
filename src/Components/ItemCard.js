@@ -7,7 +7,6 @@ import CardContent from '@mui/material/CardContent';
 import { FaEnvelope, FaGlobe, FaHeart, FaRegHeart, FaTrashAlt, FaUserAlt } from "react-icons/fa";
 
 export default function ItemCard(props) {
-    console.log(props.data)
   return (
       <div>
     <Card>
@@ -24,12 +23,11 @@ export default function ItemCard(props) {
       <FaGlobe /> {props.data.website}
       </Typography>
       </CardContent>
-      <CardActions >
+      <CardActions style={{justifyContent:'center'}}>
       <Button style={{color:'red'}} onClick={() => props.onHandleLike(props.data.id)}>{props.data.like ? 
       <FaHeart/>  : <FaRegHeart /> }
       </Button>
       <Button onClick={() => props.onHandleClick(props.data.id)}> <FaTrashAlt /> </Button>
-      
       </CardActions>
     </Card>
     </div>

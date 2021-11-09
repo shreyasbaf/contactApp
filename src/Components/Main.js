@@ -51,16 +51,18 @@ function onHandleLike(value){
             <Stack alignItems="center">
             <CircularProgress/>
             </Stack>
-            :    
+            :
+            user.length ?
             <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container spacing={{ xs: 2, md: 3 }}>
               {user.map((item, index) => (
                 <Grid item xs={12} sm={4} md={4} key={index} >
                       <ItemCard data={item} onHandleClick={onHandleClick} onHandleLike = {onHandleLike}/>              
                 </Grid>
               ))}
             </Grid>
-          </Box>
+          </Box> 
+          : <h3 style={{textAlign:'center'}}> No Data To Display</h3>
         }
     </div>
   );
